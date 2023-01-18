@@ -1,0 +1,7 @@
+Algumas opções de vídeo tutorial em português para iniciar a programação em C++ incluem:
+
+O canal "Programação Dinâmica" no YouTube tem uma série de vídeos sobre C++, desde o básico até conceitos avançados.
+O canal "Curso em Vídeo" no YouTube tem uma série de vídeos sobre C++ e outras linguagens de programação, com explicações claras e exemplos práticos.
+O canal "Gustavo Guanabara" no YouTube oferece vídeos tutoriais sobre C++ e outras linguagens de programação com exemplos práticos e explicações simples.
+
+É importante notar que para aprender uma linguagem de programação é importante praticar e escrever códigos. Dessa forma, é recomendado que junto com esses vídeos tutoriais, você também pratique escrevendo códigos e resolvendo problemas. Alguns sites como CodeForces, HackerRank, CodeSignal, entre outros, oferecem desafios e problemas para praticar a programação.
