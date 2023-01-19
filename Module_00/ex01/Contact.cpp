@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:55:25 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/01/18 23:41:21 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/01/19 23:15:43 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,15 @@ Contact::~Contact(void){
 void	Contact::add_contact(int buffer){
 	this->index = "  Index: "; this->index.append(std::to_string(buffer));
 	std::cout << "First Name: "; std::cin >> this->first_name;
+	std::cin.clear(); std::cin.ignore(256,'\n');
 	std::cout << "Last Name: "; std::cin >> this->last_name;
+	std::cin.clear(); std::cin.ignore(256,'\n');
 	std::cout << "Nickname: "; std::cin >> this->nickname;
+	std::cin.clear(); std::cin.ignore(256,'\n');
 	std::cout << "Phone Number: "; std::cin >> this->phone_number;
+	std::cin.clear(); std::cin.ignore(256,'\n');
 	std::cout << "Darkest Secret: "; std::cin >> this->darkest_secret;
+	std::cin.clear(); std::cin.ignore(256,'\n');
 	this->obj[0] = this->index;
 	this->obj[1] = this->first_name;
 	this->obj[2] = this->last_name;
