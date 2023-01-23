@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 20:06:21 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/01/18 23:35:28 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:08:59 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(int index){
+PhoneBook::PhoneBook(void){
 	this->buffer = 0;
+	this->cmd[0] = "Commands:";
+	this->cmd[1] = "ADD";
+	this->cmd[2] = "SEARCH";
+	this->cmd[3] = "EXIT";
 	//std::cout << "Constructor phonebook" << index << std::endl;
 }
 
@@ -38,7 +42,8 @@ void	PhoneBook::search(void){
 
 	index = -1;
 	for (int j = 0; j < 45; j++)
-		std::cout << "―"; std::cout << std::endl;
+		std::cout << "―";
+	std::cout << std::endl;
 	while (++index < this->buffer){
 		this->contact[index].print_contact(4, 45);
 	}
@@ -47,7 +52,8 @@ void	PhoneBook::search(void){
 	if (std::cin){
 		if (index > 0 && index <= this->buffer){
 			for (int j = 0; j < 67; j++)
-				std::cout << "―"; std::cout << std::endl;
+				std::cout << "―";
+			std::cout << std::endl;
 			this->contact[index - 1].print_contact(6, 67);
 		}
 		else
@@ -67,7 +73,7 @@ void	PhoneBook::display_cmds(void){
 	std::cout << std::endl;
 	for (int j = 0; j < 4; j++){
 		std::cout << "|";
-		for (int i = 0; i < (10 - this->cmd[j].length()); i++)
+		for (int i = 0; i < (10 - (int)this->cmd[j].length()); i++)
 			std::cout << " ";
 		std::cout << this->cmd[j];
 	}

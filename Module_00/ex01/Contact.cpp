@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:55:25 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/01/19 23:15:43 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:39:00 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Contact::~Contact(void){
 }
 
 void	Contact::add_contact(int buffer){
-	this->index = "  Index: "; this->index.append(std::to_string(buffer));
+	this->index = "  Index: ";
+	this->index.insert(this->index.end(), (char)(buffer + 48));
 	std::cout << "First Name: "; std::cin >> this->first_name;
 	std::cin.clear(); std::cin.ignore(256,'\n');
 	std::cout << "Last Name: "; std::cin >> this->last_name;
@@ -68,6 +69,8 @@ void	Contact::print_contact(int parameters, int char_display){
 		}
 	}
 	std::cout << std::endl;
-	for (int j = 0; j < char_display; j++)
-		std::cout << "―"; std::cout << std::endl;
+	for (int j = 0; j < char_display; j++){
+		std::cout << "―";
+	}
+	std::cout << std::endl;
 }

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 20:08:58 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/01/23 12:07:12 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/01/21 21:35:51 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/01/21 22:00:31 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-#include <iostream>
-#include "Contact.hpp"
+#include "Zombie.hpp"
 
-class PhoneBook {
-public:
-	PhoneBook(void);
-	~PhoneBook();
-	void	add();
-	void	search();
-	void	display_cmds();
-private:
-	std::string cmd[4];
-	Contact contact[8];
-	int buffer;
-};
+int main(void){
+	Zombie	*zombie1;
+	Zombie	zombie2;
+	Zombie	*horde;
 
-#endif
+	zombie1 = zombie2.newZombie("Joao");
+	delete zombie1;
+	horde = zombie2.zombieHorde(10, "MAX Zombie");
+	zombie1 = zombie2.newZombie("Eduardo");
+	delete zombie1;
+	delete [] horde;
+}

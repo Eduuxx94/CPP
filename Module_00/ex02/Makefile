@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/11 16:09:26 by ede-alme          #+#    #+#              #
-#    Updated: 2023/01/23 12:58:26 by ede-alme         ###   ########.fr        #
+#    Created: 2023/01/22 19:58:32 by ede-alme          #+#    #+#              #
+#    Updated: 2023/01/23 12:57:32 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = account
 
-SRC = megaphone.cpp
+SRC =	tests.cpp \
+		Account.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
