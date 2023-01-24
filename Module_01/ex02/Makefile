@@ -5,17 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/22 19:58:32 by ede-alme          #+#    #+#              #
-#    Updated: 2023/01/23 13:08:48 by ede-alme         ###   ########.fr        #
+#    Created: 2023/01/23 21:06:41 by ede-alme          #+#    #+#              #
+#    Updated: 2023/01/23 21:07:14 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = brain
 
 SRC =	main.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
-		Zombie.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

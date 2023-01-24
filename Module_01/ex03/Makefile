@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/22 19:58:32 by ede-alme          #+#    #+#              #
-#    Updated: 2023/01/23 13:08:48 by ede-alme         ###   ########.fr        #
+#    Created: 2023/01/23 21:35:17 by ede-alme          #+#    #+#              #
+#    Updated: 2023/01/24 22:10:29 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = weapon
 
 SRC =	main.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
-		Zombie.cpp \
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
