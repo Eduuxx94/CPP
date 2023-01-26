@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:55:25 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/01/23 12:39:00 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:53:55 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,29 @@ std::string* Contact::send_obj(void){
 }
 
 void Contact::copy_obj(std::string* obj){
-	this->first_name = obj[1]; this->obj[1] = this->first_name;
-	this->last_name = obj[2]; this->obj[2] = this->last_name;
-	this->nickname = obj[3]; this->obj[3] = this->nickname;
-	this->phone_number = obj[4]; this->obj[4] = this->phone_number;
-	this->darkest_secret = obj[5]; this->obj[5] = this->darkest_secret;
+	this->first_name = obj[1];
+	this->obj[1] = this->first_name;
+	this->last_name = obj[2];
+	this->obj[2] = this->last_name;
+	this->nickname = obj[3];
+	this->obj[3] = this->nickname;
+	this->phone_number = obj[4];
+	this->obj[4] = this->phone_number;
+	this->darkest_secret = obj[5];
+	this->obj[5] = this->darkest_secret;
 }
 
 void	Contact::print_contact(int parameters, int char_display){
 	int nbr_space;
 
 	nbr_space = 0;
-	std::cout << "|";
+	if (char_display)
+		std::cout << "|";
 	for (int i = 0; i < parameters; i++){
-		if ((this->obj[i]).length() > 10)
+		if (!char_display){
+			std::cout << (this->obj[i]) << std::endl;
+		}
+		else if ((this->obj[i]).length() > 10)
 			std::cout << (this->obj[i]).substr(0, 9) << ".|";
 		else{
 			nbr_space = 10 - (this->obj[i]).length();
@@ -68,9 +77,11 @@ void	Contact::print_contact(int parameters, int char_display){
 			std::cout << (this->obj[i]) << "|";
 		}
 	}
-	std::cout << std::endl;
+	if (char_display)
+		std::cout << std::endl;
 	for (int j = 0; j < char_display; j++){
 		std::cout << "―";
 	}
-	std::cout << std::endl;
+	if (char_display)
+		std::cout << std::endl;
 }

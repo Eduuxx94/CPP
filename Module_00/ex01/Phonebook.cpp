@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 20:06:21 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/01/23 12:08:59 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:51:50 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,16 @@ void	PhoneBook::search(void){
 	std::cin >> index;
 	if (std::cin){
 		if (index > 0 && index <= this->buffer){
-			for (int j = 0; j < 67; j++)
-				std::cout << "―";
-			std::cout << std::endl;
-			this->contact[index - 1].print_contact(6, 67);
+			this->contact[index - 1].print_contact(6, 0);
 		}
 		else
 			std::cout << "Index out of range!" << std::endl;
 	}
 	else {
 		std::cout << "Invalid (int)index caracter!" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(256,'\n');
 	}
+	std::cin.clear();
+	std::cin.ignore(256,'\n');
 }
 
 void	PhoneBook::display_cmds(void){

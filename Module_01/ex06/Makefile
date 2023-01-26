@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/11 16:09:26 by ede-alme          #+#    #+#              #
-#    Updated: 2023/01/26 12:35:17 by ede-alme         ###   ########.fr        #
+#    Created: 2023/01/26 11:54:53 by ede-alme          #+#    #+#              #
+#    Updated: 2023/01/26 11:56:10 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = harl
 
-SRC = megaphone.cpp
+SRC =	main.cpp \
+		Harl.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = c++
+CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(OBJ)
@@ -44,7 +45,7 @@ White='\033[0;37m'        # White
 Color_Off='\033[0m'       # Text Reset
 
 t: re
-	@echo $(Red) "Starting some testes for "$(Green)   $(NAME)$(Color_Off)
-	@valgrind ./$(NAME) "Hello World!"
+	@echo $(Red) "Starting some testes for "$(Green)   $(NAME)    $(Red) $(Color_Off)
+	@valgrind ./$(NAME) "warning"
 
 .PHONY: all clean fclean re t

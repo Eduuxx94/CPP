@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 19:58:32 by ede-alme          #+#    #+#              #
-#    Updated: 2023/01/23 12:57:32 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/01/26 17:38:18 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf mylog.log
 
 re: fclean all
 
@@ -46,6 +47,7 @@ Color_Off='\033[0m'       # Text Reset
 
 t: re
 	@echo $(Red) "Starting some testes for "$(Green)   $(NAME)    $(Red) $(Color_Off)
-	@valgrind ./$(NAME)
+	@./$(NAME) > mylog.log
 
+#19920104_091532.log
 .PHONY: all clean fclean re t
