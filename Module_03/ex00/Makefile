@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/30 21:05:05 by ede-alme          #+#    #+#              #
-#    Updated: 2023/01/30 21:57:49 by ede-alme         ###   ########.fr        #
+#    Created: 2023/02/02 21:42:05 by ede-alme          #+#    #+#              #
+#    Updated: 2023/02/02 23:33:59 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed
+NAME =	claptrap
 
 SRC =	main.cpp \
-		Fixed.cpp \
+		ClapTrap.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = g++
+CXX = c++
+
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(OBJ)
