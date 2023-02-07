@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 21:05:32 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/01/31 22:58:31 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/07 20:52:41 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ Fixed::Fixed(const Fixed& copy){
 }
 
 Fixed::Fixed(const int integer) {
+	std::cout << "Int constructor called" << std::endl;
 	this->fixed = (integer << this->fract);
 }
 
 Fixed::Fixed(const float floating) {
+	std::cout << "Float constructor called" << std::endl;
 	this->fixed = 0;
 	this->fixed = roundf(floating * (1 << this->fract));
 }
@@ -37,7 +39,7 @@ Fixed::Fixed(const float floating) {
 Fixed& Fixed::operator=(const Fixed &rhs) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs) {
-		this->fixed = rhs.getRawBits();
+		this->fixed = rhs.fixed;
 	}
 	return *this;
 }

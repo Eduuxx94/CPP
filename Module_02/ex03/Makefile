@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 21:05:05 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/07 20:42:58 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/07 21:02:22 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME = fixed
 
 SRC =	main.cpp \
 		Fixed.cpp \
+		Point.cpp \
+		bsp.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -46,6 +48,6 @@ Color_Off='\033[0m'       # Text Reset
 
 t: re
 	@echo $(Red) "Starting some testes for "$(Green)   $(NAME)    $(Red) $(Color_Off)
-	@valgrind ./$(NAME)
+	@./$(NAME)
 
 .PHONY: all clean fclean re t
