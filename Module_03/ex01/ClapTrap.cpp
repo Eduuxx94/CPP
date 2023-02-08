@@ -6,21 +6,22 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 21:43:23 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/05 17:32:41 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/08 15:25:03 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void): name("Noname"), hit_pts(10), energy_pts(10), attack_dmg(0) {
-	std::cout << "Default constructor called with the name " << name << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name(name), hit_pts(10), energy_pts(10), attack_dmg(0) {
-	std::cout << "Constructor called with the name: " << name << std::endl;
+	std::cout << "String Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj) {
+	std::cout << "Copy Constructor called" << std::endl;
 	this->name = obj.name;
 	this->attack_dmg = obj.attack_dmg;
 	this->energy_pts = obj.energy_pts;

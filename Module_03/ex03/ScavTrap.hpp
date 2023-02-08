@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 21:42:33 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/08 15:31:30 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/03 21:26:50 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/05 17:04:39 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 
-int	main(void) {
-	FragTrap	a;
-	FragTrap	b("LOLOL", 12, 40, 42);
-	b.highFiveGuys();
-	FragTrap	c(b);
-	c = a;
-}
+class ScavTrap : public ClapTrap {
+private:
+    /* data */
+public:
+    ScavTrap(void);
+    ScavTrap(const ScavTrap& obj);
+    ScavTrap(std::string name);
+    ScavTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg);
+    ~ScavTrap();
+    void guardGate();
+    ScavTrap& operator=(const ScavTrap& obj);
+};

@@ -6,31 +6,57 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 21:43:23 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/08 15:24:14 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:18:10 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void): name("Noname"), hit_pts(10), energy_pts(10), attack_dmg(0) {
-	std::cout << "Default constructor called" << std::endl;
-}
-
-ClapTrap::ClapTrap(const ClapTrap & copy): name(copy.name), hit_pts(copy.hit_pts), energy_pts(copy.energy_pts), attack_dmg(copy.attack_dmg) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name(name), hit_pts(10), energy_pts(10), attack_dmg(0) {
-	std::cout << "String Constructor called: " << std::endl;
+	std::cout << "ClapTrap String Constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &obj) {
+	std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	this->name = obj.name;
+	this->attack_dmg = obj.attack_dmg;
+	this->energy_pts = obj.energy_pts;
+	this->hit_pts = obj.hit_pts;
+}
+
+ClapTrap::ClapTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg): name(name), hit_pts(hit_pts), energy_pts(energy_pts), attack_dmg(attack_dmg) {
+	std::cout << "ClapTrap set values Constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called!" << std::endl;
+	std::cout << "ClapTrap Destructor called!" << std::endl;
 }
 
 void	ClapTrap::setdmg(int dmg) {
 	this->attack_dmg = dmg;
-	std::cout << this->name << " is now with " << dmg << " attack damage!" << std::endl;
+}
+
+void ClapTrap::setname(std::string name) {
+	this->name = name;
+}
+
+void ClapTrap::sethpts(int hit_pts) {
+	this->hit_pts = hit_pts;
+}
+
+void ClapTrap::setepts(int energy_pts) {
+	this->energy_pts = energy_pts;
+}
+
+void ClapTrap::setvar(std::string name, int hit_pts, int energy_pts, int attack_dmg) {
+	this->name = name;
+	this->hit_pts = hit_pts;
+	this->energy_pts = energy_pts;
+	this->attack_dmg = attack_dmg;
 }
 
 void ClapTrap::attack(const std::string &target) {
@@ -71,26 +97,27 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	}
 }
 
-int		ClapTrap::gethitpts(void) {
+int		ClapTrap::gethit_pts(void) const{
 	return this->hit_pts;
 }
 
-ClapTrap::operator std::string() const {
-	
+int ClapTrap::getenergy_pts(void) const{
+	return this->energy_pts;
+}
+
+std::string	ClapTrap::getname(void) const {
 	return this->name;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
-{
-	std::cout << "Copy assign operator called!" << std::endl;
-    name = obj.name;
-	hit_pts = obj.hit_pts;
-	energy_pts = obj.energy_pts;
-	attack_dmg = obj.attack_dmg;
-	return *this;
+int		ClapTrap::getattack_dmg(void) const{
+	return this->attack_dmg;
 }
 
-ClapTrap::operator int() const {
-	
-	return this->attack_dmg;
+ClapTrap&	ClapTrap::operator=(const ClapTrap &obj) {
+	std::cout << "ClapTrap Copy assign operator called!" << std::endl;
+	this->name = obj.name;
+	this->attack_dmg = obj.attack_dmg;
+	this->energy_pts = obj.energy_pts;
+	this->hit_pts = obj.hit_pts;
+	return *this;
 }

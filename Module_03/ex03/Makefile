@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 21:42:05 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/08 15:31:44 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/08 16:13:28 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC =	main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
 		FragTrap.cpp \
+		DiamondTrap.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
