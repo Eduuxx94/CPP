@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(void): name("Noname"), hit_pts(10), energy_pts(10), attack_dm
 }
 
 ClapTrap::ClapTrap(std::string name): name(name), hit_pts(10), energy_pts(10), attack_dmg(0) {
-	std::cout << "ClapTrap String Constructor called" << std::endl;
+	std::cout << this->name <<" String Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj) {
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap Destructor called!" << std::endl;
+	std::cout << "ClapTrap " << this->getname() << " Destructor called!" << std::endl;
 }
 
 void	ClapTrap::setdmg(int dmg) {
@@ -50,6 +50,7 @@ void ClapTrap::sethpts(int hit_pts) {
 
 void ClapTrap::setepts(int energy_pts) {
 	this->energy_pts = energy_pts;
+	std::cout << "ClapTrap " << this->getname() << " set " << energy_pts << " energy points!" << std::endl;
 }
 
 void ClapTrap::setvar(std::string name, int hit_pts, int energy_pts, int attack_dmg) {

@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void): ClapTrap(){
     this->setvar("FragTrap", 100, 100, 30);
-    std::cout << "FragTrap default Constructor called!" << std::endl;
+    std::cout << "FragTrap Default Constructor called!" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &obj): ClapTrap(obj.getname(), obj.gethit_pts(), obj.getenergy_pts(), obj.getattack_dmg()) {
@@ -23,7 +23,7 @@ FragTrap::FragTrap(const FragTrap &obj): ClapTrap(obj.getname(), obj.gethit_pts(
 
 FragTrap::FragTrap(std::string name) {
      this->setvar(name, 100, 100, 30);
-     std::cout << "FragTrap " << this->getname() << " Name passed to constructor!" << std::endl;
+     std::cout << this->name << " String Constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg) {
@@ -36,7 +36,7 @@ FragTrap::~FragTrap() {
 }
 
 void FragTrap::highFiveGuys(void) {
-    std::cout << this->getname() << " Requested high fives!" << std::endl;
+    std::cout << "FragTrap " << this->getname() << " Requested high fives!" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &obj)

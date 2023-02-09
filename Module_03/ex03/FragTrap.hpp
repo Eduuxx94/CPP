@@ -13,9 +13,11 @@
 #pragma once
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
-private:
-    /* data */
+class FragTrap : virtual public ClapTrap {
+protected:
+    static const unsigned int MAX_hit_pts = 100;
+    static const unsigned int MAX_energy_pts = 100;
+    static const unsigned int MAX_attack_dmg = 30;
 public:
     FragTrap(void);
     FragTrap(const FragTrap& obj);

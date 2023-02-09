@@ -13,11 +13,25 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void) {
-	FragTrap	a;
-	FragTrap	b("LOLOL", 12, 40, 42);
-	b.highFiveGuys();
-	FragTrap	c(b);
-	c = a;
+	DiamondTrap a("DI4M-42");
+	std::cout << std::endl;
+	a.whoAmI();
+	std::cout << "Hit Points: " << a.gethit_pts() << std::endl;
+	std::cout << "Energy points: " << a.getenergy_pts() << std::endl;
+	std::cout << "Attack Damage: " << a.getattack_dmg() << std::endl;
+	a.setepts(5);
+	std::cout << std::endl;
+	for (int i = 0; i < 6; i++) {
+		a.attack("Slowest Bot");
+	}
+	a.guardGate();
+	a.highFiveGuys();
+	std::cout << std::endl;
+	for (int i = 0; i < 6; i++) {
+		a.takeDamage(20);
+	}
+	std::cout << std::endl;
 }
