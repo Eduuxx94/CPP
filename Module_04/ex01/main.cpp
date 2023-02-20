@@ -6,13 +6,15 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:09:45 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/18 17:33:31 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:53:36 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongCat.hpp"
 
 int main(void) {
     Animal* animals[4];
