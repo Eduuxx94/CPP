@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 13:43:12 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/07 17:10:20 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/17 18:44:31 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/18 14:43:18 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
+#include <iostream>
 
-WrongCat::WrongCat(/* args */) {
-    std::cout << "WrongCat Constructor called!" << std::endl;
-}
+class Brain
+{
+private:
+    std::string ideas[100];
+    int buffer;
+public:
+    Brain(/* args */);
+    Brain(const Brain& copy);
+    ~Brain();
+    void    setIdea(std::string idea);
+    void    showIdeas(void);
+    Brain&  operator=(const Brain& rhs);
+};
 
-WrongCat::~WrongCat() {
-    std::cout << "WrongCat Destructor called!" << std::endl;
-}
-
-void WrongCat::makeSound() const {
-    std::cout << "A WrongCat Sound!" << std::endl;
-}
-
-std::string WrongCat::getType() const{
-    return "Wrong Cat";
-}
+#endif

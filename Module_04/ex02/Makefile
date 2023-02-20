@@ -6,14 +6,14 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 16:06:34 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/18 15:56:41 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/18 17:48:55 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	animal
 
 SRC =	main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		Brain.cpp \

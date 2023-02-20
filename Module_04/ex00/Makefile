@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/06 20:29:52 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/07 17:25:35 by ede-alme         ###   ########.fr        #
+#    Created: 2023/02/16 16:06:34 by ede-alme          #+#    #+#              #
+#    Updated: 2023/02/17 18:38:14 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,8 @@ SRC =	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
 
-OBJ = $(SRC:.cpp=.o)
+OBJ =	$(SRC:.cpp=.o)
 
 CXX = c++
 
@@ -37,7 +35,6 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
-
 
 # Regular Colors
 Black='\033[0;30m'        # Black

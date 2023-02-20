@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 13:50:45 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/07 17:25:13 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/16 16:09:43 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/18 17:49:40 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_ANIMAL_HPP
-#define WRONG_ANIMAL_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-#include <iostream>
-
-class WrongAnimal
+class Dog: public AAnimal
 {
 private:
-    /* data */
+    Brain   *brain;
 public:
-    WrongAnimal(/* args */);
-    /*virtual*/~WrongAnimal();
-    /*virtual*/void    makeSound() const;
-    /*virtual*/std::string    getType() const;
+    Dog(void);
+    Dog(const Dog& copy);
+    ~Dog();
+    void    makeSound(void) const;
+    void    telepathy(void) const;
+    void    train(std::string idea);
+    Dog&    operator=(const Dog& rhs);
 };
 
 #endif

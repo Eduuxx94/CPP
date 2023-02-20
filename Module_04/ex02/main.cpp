@@ -6,16 +6,17 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:09:45 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/18 17:33:31 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/18 20:09:07 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main(void) {
-    Animal* animals[4];
+    AAnimal* animals[4];
+    //AAnimal a; //cannot declare variable ‘a’ to be of abstract type ‘AAnimal’ -> 42 SUBJET: "the default Animal class should not be instantiable."
 
     for (int i = 0; i < 4; i++) {
         if (i < 2) {

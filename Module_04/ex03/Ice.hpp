@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 16:09:43 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/17 17:38:32 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/18 20:31:17 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/20 11:15:45 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-#include "Animal.hpp"
+#ifndef ICE_HPP
+#define ICE_HPP
+#include <iostream>
+#include "AMateria.hpp"
 
-class Dog: public Animal
+class Ice: public AMateria
 {
 private:
     /* data */
 public:
-    Dog(void);
-    Dog(const Dog& copy);
-    ~Dog();
-    void    makeSound() const;
-    Dog&    operator=(const Dog& rhs);
+    Ice(/* args */);
+    ~Ice();
+    std::string const & getType() const; //Returns the materia type
+    AMateria* clone() const;
+    void use(ICharacter& target);
 };
 
 #endif

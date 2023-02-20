@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 13:43:24 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/07 17:10:36 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/18 20:30:43 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/20 11:16:54 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+#include "AMateria.hpp"
 
-#include <iostream>
-#include "WrongAnimal.hpp"
+AMateria::AMateria(std::string const &type): type(type) {
+    std::cout << this->type << " AMateria String constructor called!" << std::endl;
+}
 
-class WrongCat : public WrongAnimal {
-private:
-    /* data */
-public:
-    WrongCat(/* args */);
-    ~WrongCat();
-    void    makeSound() const;
-    std::string    getType() const;
-};
+AMateria::~AMateria() {
+    std::cout << this->type << " AMateria Destructor called!" << std::endl;
+}
 
-#endif
+std::string const &AMateria::getType() const {
+    return this->type;
+}

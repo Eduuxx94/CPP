@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 16:09:43 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/17 17:38:32 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/18 20:39:10 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/18 20:39:42 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-#include "Animal.hpp"
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-class Dog: public Animal
+class MateriaSource
 {
 private:
     /* data */
 public:
-    Dog(void);
-    Dog(const Dog& copy);
-    ~Dog();
-    void    makeSound() const;
-    Dog&    operator=(const Dog& rhs);
+    MateriaSource(/* args */);
+    ~MateriaSource();
 };
 
 #endif

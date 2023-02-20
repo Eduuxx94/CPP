@@ -6,17 +6,18 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 16:06:34 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/18 15:56:41 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/18 20:54:59 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	animal
 
 SRC =	main.cpp \
-		Animal.cpp \
-		Dog.cpp \
-		Cat.cpp \
-		Brain.cpp \
+		AMateria.cpp \
+		Ice.cpp \
+		Cure.cpp \
+		ICharacter.cpp \
+		MateriaSource.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
 

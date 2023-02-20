@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 13:43:12 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/07 17:10:20 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/16 16:09:38 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/18 17:49:44 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-WrongCat::WrongCat(/* args */) {
-    std::cout << "WrongCat Constructor called!" << std::endl;
-}
+class Cat: public AAnimal
+{
+private:
+    Brain   *brain;
+public:
+    Cat(void);
+    Cat(const Cat& copy);
+    ~Cat();
+    void    makeSound() const;
+    void    telepathy(void) const;
+    void    train(std::string idea);
+    Cat&    operator=(const Cat& rhs);
+};
 
-WrongCat::~WrongCat() {
-    std::cout << "WrongCat Destructor called!" << std::endl;
-}
-
-void WrongCat::makeSound() const {
-    std::cout << "A WrongCat Sound!" << std::endl;
-}
-
-std::string WrongCat::getType() const{
-    return "Wrong Cat";
-}
+#endif

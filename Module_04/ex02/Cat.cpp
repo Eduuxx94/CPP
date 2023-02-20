@@ -1,48 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 16:09:41 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/18 17:30:17 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/16 16:09:36 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/18 17:52:25 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(void){
-    std::cout << "Dog default constructor called!" << std::endl;
-    this->type = "Dog";
+Cat::Cat(void) {
+    std::cout << "Cat default constructor called!" << std::endl;
+    this->type = "Cat";
     this->brain = new Brain();
 }
 
-Dog::Dog(const Dog &copy): Animal() {
-    std::cout << "Dog default constructor called!" << std::endl;
+Cat::Cat(const Cat &copy): AAnimal() {
+    std::cout << "Cat copy constructor called!" << std::endl;
     type = copy.type;
     this->brain = new Brain(*copy.brain);
 }
 
-Dog::~Dog(){
+Cat::~Cat() {
     delete this->brain;
-    std::cout << "Dog destructor called!" << std::endl;
+    std::cout << "Cat destructor called!" << std::endl;
 }
 
-void Dog::makeSound(void) const{
-    std::cout << "WOOF" << std::endl;
+void Cat::makeSound() const{
+    std::cout << "MEOW" << std::endl;
 }
 
-void Dog::telepathy(void) const {
+void Cat::telepathy(void) const {
     brain->showIdeas();
 }
 
-void Dog::train(std::string idea) {
+void Cat::train(std::string idea) {
     brain->setIdea(idea);
 }
 
-Dog &Dog::operator=(const Dog &rhs) {
-    this->type = rhs.type;
-    this->brain = rhs.brain;
+Cat &Cat::operator=(const Cat &rhs) {
+    type = rhs.type;
     return *this;
 }

@@ -5,24 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 20:42:30 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/07 17:13:36 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/16 16:09:38 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/18 17:06:33 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
-#include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat: public Animal
+{
 private:
-    /* data */
+    Brain   *brain;
 public:
     Cat(void);
+    Cat(const Cat& copy);
     ~Cat();
-    void makeSound() const;
-    std::string getType(void) const;
+    void    makeSound() const;
+    void    telepathy(void) const;
+    void    train(std::string idea);
+    Cat&    operator=(const Cat& rhs);
 };
 
 #endif
