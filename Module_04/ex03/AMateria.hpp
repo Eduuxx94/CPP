@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:30:03 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 11:25:24 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:20:51 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class AMateria
 protected:
     std::string type;
 public:
-    AMateria(void);
     AMateria(std::string const &type);
-    ~AMateria();
+    AMateria(const AMateria& copy);
+    virtual ~AMateria();
     std::string const & getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);

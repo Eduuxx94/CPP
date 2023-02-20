@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 20:39:10 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 19:51:27 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/20 15:48:50 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/20 20:21:15 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
-//#include <iostream>
-#include "IMateriaSource.hpp"
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
+#include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-class MateriaSource: public IMateriaSource
+class Character: public ICharacter
 {
 private:
+    std::string name;
     AMateria*   materias[4];
 public:
-    MateriaSource(/* args */);
-    ~MateriaSource();
-    void    learnMateria(AMateria*);
-    AMateria*   createMateria(std::string const & type);
+    Character(std::string name);
+    Character(const Character& copy);
+    ~Character();
+    std::string const & getName() const;
+    void equip(AMateria* m);
+    void unequip(int idx);
+    void use(int idx, ICharacter& target);
 };
 
 #endif

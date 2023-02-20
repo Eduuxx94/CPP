@@ -6,17 +6,17 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 16:06:34 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/18 20:54:59 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/20 20:01:59 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	animal
+NAME =	materia
 
 SRC =	main.cpp \
 		AMateria.cpp \
 		Ice.cpp \
 		Cure.cpp \
-		ICharacter.cpp \
+		Character.cpp \
 		MateriaSource.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
@@ -51,6 +51,6 @@ Color_Off='\033[0m'       # Text Reset
 
 t: re
 	@echo $(Red) "Starting some testes for "$(Green)   $(NAME)    $(Red) $(Color_Off)
-	@valgrind ./$(NAME)
+	@valgrind --leak-check=full ./$(NAME)
 
 .PHONY: all clean fclean re t

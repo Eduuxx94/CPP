@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 20:34:13 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/18 20:50:06 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/20 13:45:29 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/20 19:50:34 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
+#include "AMateria.hpp"
 
-ICharacter::ICharacter(/* args */) {
-}
+class IMateriaSource
+{
+public:
+    virtual ~IMateriaSource() {}
+    virtual void learnMateria(AMateria*) = 0;
+    virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-ICharacter::~ICharacter() {
-}
+#endif

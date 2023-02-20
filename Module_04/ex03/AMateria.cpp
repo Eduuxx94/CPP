@@ -6,14 +6,20 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:30:43 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 11:16:54 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:20:46 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const &type): type(type) {
-    std::cout << this->type << " AMateria String constructor called!" << std::endl;
+AMateria::AMateria(std::string const &type) : type(type)
+{
+    std::cout << "AMateria String constructor called!" << std::endl;
+}
+
+AMateria::AMateria(const AMateria &copy) {
+    std::cout << "AMateria copy constructor called!" << std::endl;
+    this->type = copy.type;
 }
 
 AMateria::~AMateria() {
@@ -22,4 +28,8 @@ AMateria::~AMateria() {
 
 std::string const &AMateria::getType() const {
     return this->type;
+}
+
+void AMateria::use(ICharacter &target) {
+    std::cout << " used " << this->getType() << " on " << target.getName() << std::endl;
 }
