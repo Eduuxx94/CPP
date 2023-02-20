@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 16:06:34 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/17 18:38:14 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/20 12:37:39 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRC =	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
 
