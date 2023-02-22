@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 15:53:25 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/22 15:56:45 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/22 23:21:53 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME =	bureaucrat
 
 SRC =	main.cpp \
 		Bureaucrat.cpp \
+		Form.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
 

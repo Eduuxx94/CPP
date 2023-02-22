@@ -6,14 +6,15 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:08:18 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/22 15:57:21 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:51:54 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
-#include <stdexcept>
+
+class Form;
 
 class Bureaucrat
 {
@@ -30,6 +31,7 @@ public:
     int           getGrade() const;
     void    incrementGrade();
     void    decrementGrade();
+    void    signForm(Form& form);
     Bureaucrat& operator=(const Bureaucrat& rhs);
 
     class GradeTooHighException : public std::exception {
