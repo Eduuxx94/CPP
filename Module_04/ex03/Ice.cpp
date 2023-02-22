@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:31:57 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 17:21:48 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:43:21 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 Ice::Ice(/* args */): AMateria("ice") {
     std::cout << "Ice constructor called!" << std::endl;
+}
+
+Ice::Ice(const Ice &copy): AMateria(copy.getType()) {
+    std::cout << "Ice copy constructor called!" << std::endl;
 }
 
 Ice::~Ice() {
@@ -31,4 +35,9 @@ AMateria *Ice::clone() const {
 
 void Ice::use(ICharacter &target) {
     std::cout << " shoots an ice bolt at " << target.getName() << std::endl;
+}
+
+Ice &Ice::operator=(const Ice &rhs) {
+    this->type = rhs.getType();
+    return *this;
 }

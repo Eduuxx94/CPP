@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:30:43 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 20:20:46 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:40:22 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ std::string const &AMateria::getType() const {
 
 void AMateria::use(ICharacter &target) {
     std::cout << " used " << this->getType() << " on " << target.getName() << std::endl;
+}
+
+AMateria & AMateria::operator=(const AMateria & rhs) {
+    this->type = rhs.getType();
+    return *this;
 }

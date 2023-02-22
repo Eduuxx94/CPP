@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:09:34 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/18 18:03:52 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:47:07 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ private:
 protected:
     std::string type;
 public:
-    /*AAnimal();
+    AAnimal();
     AAnimal(std::string type);
     AAnimal(const AAnimal& copy);
-    */
     virtual ~AAnimal() = 0;//This ensures that any derived classes of AAnimal must implement their own destructor.
     virtual void    makeSound() const = 0;
     std::string getType(void) const;

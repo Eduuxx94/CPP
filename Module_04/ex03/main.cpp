@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:09:45 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 20:19:35 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:51:05 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "Cure.hpp"
 
 int main(void) {
+    /*
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
@@ -32,5 +33,25 @@ int main(void) {
     delete bob;
     delete me;
     delete src;
+    */
+    ICharacter* mage = new Character("Mage");
+    ICharacter* goblin = new Character("Goblin");
+    IMateriaSource* msrc = new MateriaSource();
+    msrc->learnMateria(new Ice());
+    msrc->learnMateria(new Cure());
+    msrc->learnMateria(new NewMateria("water"));
+    std::cout << std::endl << "Tests--->>>"  << std::endl << std::endl;
+    mage->equip(msrc->createMateria("something!")); //can't equip something that doesn't exist
+    mage->equip(msrc->createMateria("water"));
+    mage->equip(msrc->createMateria("ice"));
+    mage->equip(msrc->createMateria("cure"));
+    mage->use(0, *goblin);
+    mage->unequip(0);
+    mage->use(0, *goblin); //Mage will not find any material because we unequip him
+    mage->use(2, *goblin);
+    std::cout << std::endl << "<<<<----- End of tests" << std::endl << std::endl << std::endl;
+    delete msrc;
+    delete goblin;
+    delete mage;
     return 0;
 }

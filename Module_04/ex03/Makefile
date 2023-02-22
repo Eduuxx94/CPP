@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 16:06:34 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/20 20:01:59 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/21 14:19:26 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC =	main.cpp \
 		Cure.cpp \
 		Character.cpp \
 		MateriaSource.cpp \
+		NewMateria.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
 

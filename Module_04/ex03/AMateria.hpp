@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:30:03 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 20:20:51 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:59:58 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
     std::string const & getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
+    AMateria&   operator=(const AMateria& rhs);
 };
 
 #endif

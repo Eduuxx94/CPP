@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   NewMateria.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 20:31:17 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/22 10:41:18 by ede-alme         ###   ########.fr       */
+/*   Created: 2023/02/18 20:32:26 by ede-alme          #+#    #+#             */
+/*   Updated: 2023/02/22 10:25:20 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef NEWMATERIA_HPP
+#define NEWMATERIA_HPP
 #include "AMateria.hpp"
 
-class Ice: public AMateria
+class NewMateria: public AMateria
 {
 private:
     /* data */
 public:
-    Ice(/* args */);
-    Ice(const Ice& copy);
-    ~Ice();
+    NewMateria(const std::string type);
+    NewMateria(const NewMateria& copy);
+    ~NewMateria();
     std::string const & getType() const; //Returns the materia type
     AMateria* clone() const;
     void use(ICharacter& target);
-    Ice&    operator=(const Ice& rhs);
+    NewMateria& operator=(const NewMateria& rhs);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:39:47 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/20 20:20:07 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:38:38 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ MateriaSource::MateriaSource(/* args */) {
     for (int i = 0; i < 4; i++) {
         this->materias[i] = NULL;
     }
+}
+
+MateriaSource::MateriaSource(const MateriaSource &copy) {
+    *this = copy;
 }
 
 MateriaSource::~MateriaSource() {
@@ -40,6 +44,7 @@ void MateriaSource::learnMateria(AMateria *ref) {
         }
     }
     std::cout << "Unale to learn material" << std::endl;
+    delete ref;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type) {
@@ -51,4 +56,11 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
     }
     std::cout << "Unable to create the materia: " << type << std::endl;
     return NULL;
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &rhs) {
+    for (int i = 0; i < 4; i++) {
+        this->materias[i] = rhs.materias[i];
+    }
+    return *this;
 }
