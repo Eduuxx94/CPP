@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 20:32:13 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/22 23:25:13 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:51:38 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ const char *Form::GradeTooLowException::what() const throw() {
 std::ostream &operator<<(std::ostream &o, const Form &i)
 {
     if (i.getSigned()) {
-        return (o << i.getName() << " is Signed:" << std::endl);
+        return (o << i.getName() << " is Signed!" << std::endl);
     }
     else {
         return ((o << i.getName() << " Form Requesites:" << std::endl << "Form Grade to Execute: " << i.getRequiredExec() << std::endl << "Form Grade to Sign: " << i.getRequiredSign() << std::endl));

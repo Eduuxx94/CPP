@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:08:06 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/22 23:19:25 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:48:49 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,18 @@ void Bureaucrat::decrementGrade() {
 
 void Bureaucrat::signForm(Form &form) {
     try {
+        if (form.getRequiredExec() < 1) {
+            throw GradeTooHighException();
+        }
+        else if (form.getRequiredExec() > 150) {
+            throw GradeTooLowException();
+        }
+        if (form.getRequiredSign() < 1) {
+            throw GradeTooHighException();
+        }
+        else if (form.getRequiredSign() > 150) {
+            throw GradeTooLowException();
+        }
         form.beSigned(*this);
         std::cout << this->getName() << " signed " << form.getName() << std::endl;
     }
