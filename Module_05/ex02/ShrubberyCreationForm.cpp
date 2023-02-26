@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:41:26 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/26 14:34:27 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/26 17:54:50 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 }
 
 const char *ShrubberyCreationForm::ShrubberyCreationFormExecException::what() const throw() {
-    return (std::string("\033[0;31the form needs to be signed! \033[0m")).c_str();
+    return "\033[0;31mthe form needs to be signed! \033[0m";
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs) {

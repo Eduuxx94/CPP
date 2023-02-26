@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 15:53:25 by ede-alme          #+#    #+#              #
-#    Updated: 2023/02/26 14:38:06 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/26 17:29:54 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRC =	main.cpp \
 		Bureaucrat.cpp \
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp \
 
 OBJ =	$(SRC:.cpp=.o)
 
