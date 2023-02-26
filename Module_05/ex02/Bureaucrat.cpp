@@ -6,12 +6,12 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:08:06 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/23 18:48:49 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/26 14:39:38 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(/* args */): _name("Test"), _grade(75) {
     try {
@@ -78,13 +78,23 @@ void Bureaucrat::decrementGrade() {
     }
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
     try {
         form.beSigned(*this);
         std::cout << this->getName() << " signed " << form.getName() << std::endl;
     }
     catch (const std::exception& e) {
         std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form) {
+    try {
+        form.execute(*this);
+        std::cout << getName() << " \033[0;32mexecuted " << form.getName() << "\033[0m" << std::endl;
+    }
+    catch (const std::exception& e) {
+        std::cerr << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 

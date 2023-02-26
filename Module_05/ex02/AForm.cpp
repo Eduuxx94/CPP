@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 20:32:13 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/02/23 18:51:38 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/02/26 12:04:49 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(/* args */): _name("Test"), _RequiredGradeExec(75), _RequiredGradeSign(75), _signed(0) {
-    std::cout << this->getName() << " Form Default constructor called!" << std::endl;
+AForm::AForm(/* args */): _name("Test"), _RequiredGradeExec(75), _RequiredGradeSign(75), _signed(0) {
+    std::cout << this->getName() << " AForm Default constructor called!" << std::endl;
     try {
         checkExceptions(_RequiredGradeSign);
     }
@@ -31,8 +31,8 @@ Form::Form(/* args */): _name("Test"), _RequiredGradeExec(75), _RequiredGradeSig
     }
 }
 
-Form::Form(const std::string name, const int exec, const int sign, bool _sign): _name(name), _RequiredGradeExec(exec), _RequiredGradeSign(sign), _signed(_sign) {
-    std::cout << this->getName() << " Form constructor called!" << std::endl;
+AForm::AForm(const std::string name, const int exec, const int sign, bool _sign): _name(name), _RequiredGradeExec(exec), _RequiredGradeSign(sign), _signed(_sign) {
+    std::cout << this->getName() << " AForm constructor called!" << std::endl;
     try {
         checkExceptions(_RequiredGradeSign);
     }
@@ -49,8 +49,8 @@ Form::Form(const std::string name, const int exec, const int sign, bool _sign): 
     }
 }
 
-Form::Form(const Form &copy): _name(copy.getName()), _RequiredGradeExec(copy.getRequiredExec()), _RequiredGradeSign(copy.getRequiredSign()), _signed(copy.getSigned())  {
-    std::cout << this->getName() << " Form copy constructor called!" << std::endl;
+AForm::AForm(const AForm &copy): _name(copy.getName()), _RequiredGradeExec(copy.getRequiredExec()), _RequiredGradeSign(copy.getRequiredSign()), _signed(copy.getSigned())  {
+    std::cout << this->getName() << " AForm copy constructor called!" << std::endl;
     try {
         checkExceptions(_RequiredGradeSign);
     }
@@ -67,38 +67,38 @@ Form::Form(const Form &copy): _name(copy.getName()), _RequiredGradeExec(copy.get
     }
 }
 
-Form::~Form() {
-    std::cout << this->getName() << " Form destructor called!" << std::endl;
+AForm::~AForm() {
+    std::cout << this->getName() << " AForm destructor called!" << std::endl;
 }
 
-const std::string Form::getName(void) const {
+const std::string AForm::getName(void) const {
     return this->_name;
 }
 
-bool Form::getSigned() const {
+bool AForm::getSigned() const {
     return this->_signed;
 }
 
-int Form::getRequiredSign() const{
+int AForm::getRequiredSign() const{
     return this->_RequiredGradeSign;
 }
 
-int Form::getRequiredExec() const{
+int AForm::getRequiredExec() const{
     return this->_RequiredGradeExec;
 }
 
-void Form::checkExceptions(int exec) {
-    if (exec < 1) {
+void AForm::checkExceptions(int grade) {
+    if (grade < 1) {
         throw GradeTooHighException();
     }
-    else if (exec > 150) {
+    else if (grade > 150) {
         throw GradeTooLowException();
     }
 }
 
-void Form::checkSignExceptions(int sign) {
+void AForm::checkSignExceptions(int sign) {
     if (this->_signed) {
-        throw FormSignedException();
+        throw AFormSignedException();
     }
     else if (sign < 1) {
         throw GradeTooHighException();
@@ -109,7 +109,7 @@ void Form::checkSignExceptions(int sign) {
     this->_signed = 1;
 }
 
-Form &Form::operator=(const Form &rhs) {
+AForm &AForm::operator=(const AForm &rhs) {
     std::string& name = const_cast<std::string&>(_name);
     name = rhs.getName();
     int& exec = const_cast<int&>(_RequiredGradeExec);
@@ -120,7 +120,7 @@ Form &Form::operator=(const Form &rhs) {
     return *this;
 }
 
-void Form::beSigned(Bureaucrat &bureaucrat) {
+void AForm::beSigned(Bureaucrat &bureaucrat) {
     try {
         checkSignExceptions(bureaucrat.getGrade());
     }
@@ -129,24 +129,24 @@ void Form::beSigned(Bureaucrat &bureaucrat) {
     }
 }
 
-const char *Form::FormSignedException::what() const throw() {
-    return "\033[0;31mForm is already Signed!\033[0m";
+const char *AForm::AFormSignedException::what() const throw() {
+    return "\033[0;31mAForm is already Signed!\033[0m";
 }
 
-const char *Form::GradeTooHighException::what() const throw() {
+const char *AForm::GradeTooHighException::what() const throw() {
     return "\033[0;31mGrade is too high \033[0m";
 }
 
-const char *Form::GradeTooLowException::what() const throw() {
+const char *AForm::GradeTooLowException::what() const throw() {
     return "\033[0;31mGrade is too low \033[0m";
 }
 
-std::ostream &operator<<(std::ostream &o, const Form &i)
+std::ostream &operator<<(std::ostream &o, const AForm &i)
 {
     if (i.getSigned()) {
         return (o << i.getName() << " is Signed!" << std::endl);
     }
     else {
-        return ((o << i.getName() << " Form Requesites:" << std::endl << "Form Grade to Execute: " << i.getRequiredExec() << std::endl << "Form Grade to Sign: " << i.getRequiredSign() << std::endl));
+        return ((o << i.getName() << " AForm Requesites:" << std::endl << "AForm Grade to Execute: " << i.getRequiredExec() << std::endl << "Form Grade to Sign: " << i.getRequiredSign() << std::endl));
     }
 }
