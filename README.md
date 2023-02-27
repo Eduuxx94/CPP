@@ -1,7 +1,11 @@
 # CPP
 This C++ repository is designed to help you understand the specifities of the language when compared to C. Time to dive into Object Oriented Programming!
 
-Module 00: This first module of C++ is designed to help you understand the specifities of the language when compared to C. Time to dive into Object Oriented Programming!
+
+Module 00:
+
+This first module of C++ is designed to help you understand the specifities of the language when compared to C. Time to dive into Object Oriented Programming!
+
     Exercise 00:
         The objective of this exercise is to create a program in C++ that takes a string as an argument and prints it in uppercase. If no argument is passed, the program should print a loud and unbearable feedback noise. The program must be implemented in C++.
 
@@ -11,7 +15,11 @@ Module 00: This first module of C++ is designed to help you understand the speci
     Exercise 02:
         The objective of this exercise is to recreate a missing file in C++. The file, Account.cpp, is missing, but Account.hpp and a log file are available. The Account class must be implemented in a way that matches the tests in the tests.cpp file and the log file. The program must be implemented in C++.
 
-Module 01: This module is designed to help you understand the memory allocation, reference, pointers to members and the usage of the switch in CPP.
+
+Module 01:
+
+This module is designed to help you understand the memory allocation, reference, pointers to members and the usage of the switch in CPP.
+
     Exercise 00:
         Implement a Zombie class with a private name attribute and a member function that allows zombies to announce themselves. Create functions to create a new zombie and create a random zombie.
 
@@ -33,7 +41,11 @@ Module 01: This module is designed to help you understand the memory allocation,
     Exercise 06:
         Create a program that takes a log level as a parameter and displays all messages from that level and above. The program should use the Harl class from Exercise 05 and use the switch statement to handle the different log levels. Give the executable the name "harlFilter".
 
-Module 02: This module is designed to help you understand Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.
+
+Module 02:
+
+This module is designed to help you understand Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.
+
     Exercise 00:
         Create a C++ class for fixed-point numbers that uses orthodox canonical form. The class should have private members for the fixed-point value and the number of fractional bits, and public members for a default constructor, copy constructor, copy assignment operator overload, destructor, a function to get the raw value of the fixed-point value, and a function to set the raw value of the fixed-point value. The goal is to learn about fixed-point numbers and how to create a class in orthodox canonical form.
 
@@ -46,7 +58,11 @@ Module 02: This module is designed to help you understand Ad-hoc polymorphism, o
     Exercise 03:
         In this exercise, you will implement a function that determines whether a given point is inside a triangle or not. To do this, you will use the Fixed class you created in the previous exercises. The function should return true if the point is inside the triangle and false otherwise.
 
-Module 03: This module is designed to help you understand Inheritance in CPP.
+
+Module 03:
+
+This module is designed to help you understand Inheritance in CPP.
+
     Exercise 00:
         Implement the ClapTrap class with the required private attributes and public member functions, and write the constructors and destructor, so the code works as expected.
 
@@ -59,7 +75,11 @@ Module 03: This module is designed to help you understand Inheritance in CPP.
     Exercise 03:
         Create a class named DiamondTrap that inherits from both FragTrap and ScavTrap. It has a name private attribute that is given the same variable's name as in the ClapTrap base class. The attributes and member functions are picked from either one of its parent classes.
 
-Module 04: This module is designed to help you understand Subtype polymorphism, abstract classes and interfaces in CPP.
+
+Module 04:
+
+This module is designed to help you understand Subtype polymorphism, abstract classes and interfaces in CPP.
+
     Exercise 00:
         Implementing polymorphism through inheritance of classes, and creating base and derived classes. In this exercise, you will create a base class called "Animal" with one attribute and two derived classes named "Dog" and "Cat". You will implement polymorphism by creating a member function in the base class and calling it through derived classes, and ensuring that each derived class produces the appropriate sound.
 
@@ -72,7 +92,11 @@ Module 04: This module is designed to help you understand Subtype polymorphism, 
     Exercise 03:
         Implementing interfaces through the use of pure abstract classes and creating two concrete classes called "Ice" and "Cure".
 
-Module 05: This module is designed to help you understand Try/Catch and Exceptions in CPP.
+
+Module 05:
+
+This module is designed to help you understand Try/Catch and Exceptions in CPP.
+
     Exercise 00:
         You need to create a Bureaucrat class with a name and a grade attribute, where the grade must be between 1 and 150. The class has getter functions and member functions to increment or decrement the bureaucrat's grade. The class also throws exceptions if the grade is out of range, and the insertion operator is overloaded to print the name and grade.
 
