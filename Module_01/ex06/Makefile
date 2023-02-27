@@ -6,11 +6,11 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 11:54:53 by ede-alme          #+#    #+#              #
-#    Updated: 2023/01/26 11:56:10 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/02/27 13:11:04 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl
+NAME = harlFilter
 
 SRC =	main.cpp \
 		Harl.cpp \
