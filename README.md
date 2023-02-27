@@ -62,10 +62,13 @@ Module 03: This module is designed to help you understand Inheritance in CPP.
 Module 04: This module is designed to help you understand Subtype polymorphism, abstract classes and interfaces in CPP.
     Exercise 00:
         Implementing polymorphism through inheritance of classes, and creating base and derived classes. In this exercise, you will create a base class called "Animal" with one attribute and two derived classes named "Dog" and "Cat". You will implement polymorphism by creating a member function in the base class and calling it through derived classes, and ensuring that each derived class produces the appropriate sound.
+
     Exercise 01:
         Creating a class called "Brain" with an array of strings inside and setting up the relationship between the Dog and Cat classes through a private pointer attribute to Brain. Then you will create an array of Animal objects with half the objects being Dogs and the other half being Cats. You will also check for memory leaks.
+
     Exercise 02:
         Making the Animal class abstract to avoid mistakes, and preventing the instantiation of the default Animal class.
+
     Exercise 03:
         Implementing interfaces through the use of pure abstract classes and creating two concrete classes called "Ice" and "Cure".
 
