@@ -90,6 +90,10 @@ int ScalarConverter::getType(const std::string &str)
 ScalarConverter::ScalarConverter(/* args */) {
 }
 
+ScalarConverter::ScalarConverter(const ScalarConverter &copy) {
+    (void)copy;
+}
+
 ScalarConverter::~ScalarConverter() {
 }
 
@@ -130,4 +134,10 @@ void ScalarConverter::convert(const std::string& str) {
         std::cout << "float: " << std::fixed << static_cast<float>(atoi(str.c_str())) << "f" << std::endl;
         std::cout << "double: " << std::fixed << static_cast<double>(atoi(str.c_str())) << std::endl;
     }  
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &rhs)
+{
+    (void)rhs;
+    return *this;
 }
