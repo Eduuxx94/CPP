@@ -6,13 +6,14 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:25:57 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/03/07 22:34:01 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:48:37 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 #include <iostream>
+#include <cstdlib>
 
 template <typename T>
 class Array
@@ -28,7 +29,7 @@ public:
         std::cout << "Array[" << _n << "] created!" << std::endl;
     };
     Array(const Array& copy): _n(copy._n), _array(new T[copy._n]) {
-        for (int i = 0; i < copy.n; i++) {
+        for (unsigned int i = 0; i < copy._n; i++) {
             this->_array[i] = copy._array[i];
         }
     };
