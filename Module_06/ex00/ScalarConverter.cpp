@@ -61,6 +61,9 @@ int ScalarConverter::getType(const std::string &str)
     }
     if (dot_count == 1 && str.length() >= 3 && str[0] != '.' && str[str.length() - 1] != '.') {
         for (int i = 0; str[i]; i++) {
+            if (std::isprint(str[i]) && !std::isdigit(str[i]) && str[i] != '.') {
+                return UNKNOW;
+            }
             if (i == 0 && str[i] == '-') {//check if number is negative, if is ignore and keep algorithm
                 continue ;
             }
@@ -131,8 +134,8 @@ void ScalarConverter::convert(const std::string& str) {
             std::cout << "char: Non displayable" << std::endl;
         }
         std::cout << "int: " << static_cast<int>(atoi(str.c_str())) << std::endl;
-        std::cout << "float: " << std::fixed << static_cast<float>(atoi(str.c_str())) << "f" << std::endl;
-        std::cout << "double: " << std::fixed << static_cast<double>(atoi(str.c_str())) << std::endl;
+        std::cout << "float: " << std::fixed << static_cast<float>(atof(str.c_str())) << "f" << std::endl;
+        std::cout << "double: " << std::fixed << static_cast<double>(atof(str.c_str())) << std::endl;
     }  
 }
 
