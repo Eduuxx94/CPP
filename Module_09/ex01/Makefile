@@ -6,19 +6,20 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 16:47:22 by ede-alme          #+#    #+#              #
-#    Updated: 2023/04/07 16:52:17 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/04/08 14:39:34 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= RPN
+NAME =		RPN
 
-SRC		= main.cpp \
+SRC =		main.cpp \
+			RPN.cpp \
 
-OBJ		= $(SRC:.cpp=.o)
+OBJ =		$(SRC:.cpp=.o)
 
-CXX		= c++
+CXX =		c++
 
-CXXFLAGS	= -Wall -Well -Wextra -std=c++98
+CXXFLAGS =	-Wall -Werror -Wextra -std=c++98
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $@
