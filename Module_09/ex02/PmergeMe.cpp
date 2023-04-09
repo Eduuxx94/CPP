@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 15:17:30 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/09 17:32:57 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/09 19:16:54 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ PmergeMe::PmergeMe(char** args) {
         _intDeque.push_back(std::strtol(args[i], NULL, 10));
     }
     std::cout << "ARGS INSERTION: \033[0;32m[OK]\033[0m" << std::endl;
+}
+
+PmergeMe::PmergeMe(const PmergeMe &copy)
+{
+    for (size_t i = 0; i < copy._intVector.size(); i++) {
+        _intVector.push_back(copy._intVector[i]);
+    }
+    for (size_t j = 0; j < copy._intDeque.size(); j++) {
+        _intDeque.push_back(copy._intDeque[j]);
+    }
 }
 
 PmergeMe::~PmergeMe()
@@ -144,4 +154,19 @@ void PmergeMe::startShort() {
      //Result time of deque short:
     std::cout << "Time to process a range of " << _intDeque.size() << " elements with std::deque : " << std::setprecision(10) << time_deque << std::endl;
 
+}
+
+PmergeMe &PmergeMe::operator=(const PmergeMe &rhs)
+{
+    if (this != &rhs) {
+        _intVector.clear();
+        for (size_t i = 0; i < rhs._intVector.size(); i++) {
+            _intVector.push_back(rhs._intVector[i]);
+        }
+        _intDeque.clear();
+        for (size_t j = 0; j < rhs._intDeque.size(); j++) {
+            _intDeque.push_back(rhs._intDeque[j]);
+        }
+    }
+    return *this;
 }

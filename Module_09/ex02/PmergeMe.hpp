@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 15:17:43 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/09 17:27:36 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/09 18:04:26 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@ private:
     std::deque<int>     _intDeque;
 public:
     PmergeMe(char** args);
+    PmergeMe(const PmergeMe& copy);
     ~PmergeMe();
+    
     static bool                 invalidArgs(char **args, int argc);
     template<typename T>
     T            mergeShort(T container);
     void                        startShort();
+
+    PmergeMe& operator=(const PmergeMe& rhs);
 };
