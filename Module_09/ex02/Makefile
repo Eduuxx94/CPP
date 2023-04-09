@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/07 16:47:22 by ede-alme          #+#    #+#              #
-#    Updated: 2023/04/08 15:16:22 by ede-alme         ###   ########.fr        #
+#    Created: 2023/04/08 15:10:11 by ede-alme          #+#    #+#              #
+#    Updated: 2023/04/08 15:17:16 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		RPN
+NAME =		PmergeMe
 
 SRC =		main.cpp \
-			RPN.cpp \
+			PmergeMe.cpp \
 
 OBJ =		$(SRC:.cpp=.o)
 
 CXX =		c++
 
-CXXFLAGS =	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $@
@@ -48,6 +48,6 @@ Color_Off='\033[0m'       # Text Reset
 t: re
 	@echo $(Red) "Starting some testes for "$(Green)   $(NAME)    $(Red) $(Color_Off)
 	clear 
-	@valgrind --leak-check=full ./$(NAME) "2 4 * 1 - 1 1 - +"
+	@valgrind --leak-check=full ./$(NAME) input.txt
 
 .PHONY: all clean fclean re t
