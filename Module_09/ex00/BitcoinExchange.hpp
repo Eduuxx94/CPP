@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:02:34 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/07 16:44:51 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:38:22 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ class BitcoinExchange
 {
 private:
     std::ifstream       _file;
+    std::string         _filename;
     std::map<std::string, double>  _values;
 public:
     BitcoinExchange();
     BitcoinExchange(const std::string& filename);
+    BitcoinExchange(const BitcoinExchange& copy);
     ~BitcoinExchange();
     void    loadinfo();
     void    showData();
@@ -36,6 +38,8 @@ public:
     void    result(BitcoinExchange& fd);
     double  getRate(std::string date);
     std::string decreaseDate(std::string date);
+
+    BitcoinExchange& operator=(const BitcoinExchange& rhs);
 };
 
 #endif

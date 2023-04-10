@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 15:17:43 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/09 18:04:26 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:57:39 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include <sys/time.h>
+#include <algorithm>
 
 class PmergeMe
 {

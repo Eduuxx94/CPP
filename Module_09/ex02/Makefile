@@ -6,7 +6,7 @@
 #    By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/08 15:10:11 by ede-alme          #+#    #+#              #
-#    Updated: 2023/04/08 15:17:16 by ede-alme         ###   ########.fr        #
+#    Updated: 2023/04/10 16:40:08 by ede-alme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,6 @@ Color_Off='\033[0m'       # Text Reset
 t: re
 	@echo $(Red) "Starting some testes for "$(Green)   $(NAME)    $(Red) $(Color_Off)
 	clear 
-	@valgrind --leak-check=full ./$(NAME) input.txt
+	@valgrind --leak-check=full ./$(NAME) 19 22 1 8 5 3 2 66 33 15 20
 
 .PHONY: all clean fclean re t

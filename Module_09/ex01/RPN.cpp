@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:15:55 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/08 14:43:19 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:16:50 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ RPN::RPN(const std::string& str) {
     }
 }
 
+RPN::RPN(const RPN &copy)
+{
+    _numbers = std::stack<int>(copy._numbers);
+}
+
 RPN::~RPN()
 {
 }
@@ -76,4 +81,12 @@ int RPN::ft_calc(int x, int y, char oper)
         return x * y;
     }
     return 0;
+}
+
+RPN &RPN::operator=(const RPN &rhs)
+{
+    if (this != &rhs) {
+        _numbers = std::stack<int>(rhs._numbers);
+    }
+    return *this;
 }

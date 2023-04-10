@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:02:36 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/07 15:40:00 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:38:45 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 BitcoinExchange::BitcoinExchange(/* args */)
 {
     _file.open("data.csv");
+    _filename = "data.csv";
     if (!_file.is_open())
         throw std::runtime_error("\033[0;31mError: could not open file \"data.csv\".\033[0m");
 }
@@ -27,8 +28,18 @@ BitcoinExchange::BitcoinExchange(const std::string& filename)
     // _file.clear();
     // _file.setstate(std::ios_base::failbit);
     _file.open(filename.c_str());
+    _filename = filename;
     if (!_file.is_open())
         throw std::runtime_error("\033[0;31mError: could not open file \"" + filename + "\".\033[0m");
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
+{
+    _file.open(copy._filename.c_str());
+    _filename = copy._filename;
+    _values = std::map<std::string, double>(copy._values.begin(), copy._values.end());
+    if (!_file.is_open())
+        throw std::runtime_error("\033[0;31mError: could not open file \"" + _filename + "\".\033[0m");
 }
 
 BitcoinExchange::~BitcoinExchange()
@@ -191,4 +202,16 @@ std::string BitcoinExchange::decreaseDate(std::string date)
         << std::setw(2) << std::setfill('0') << month << separator
         << std::setw(2) << std::setfill('0') << day;
     return oss.str();
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &rhs)
+{
+    if (this != &rhs) {
+        _file.open(rhs._filename.c_str());
+        _filename = rhs._filename;
+        _values = std::map<std::string, double>(rhs._values.begin(), rhs._values.end());
+        if (!_file.is_open())
+            throw std::runtime_error("\033[0;31mError: could not open file \"" + _filename + "\".\033[0m");
+    }
+    return *this;
 }

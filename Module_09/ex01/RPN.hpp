@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:16:09 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/08 14:35:51 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:15:35 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ private:
 public:
     RPN(/* args */);
     RPN(const std::string& str);
+    RPN(const RPN& copy);
     ~RPN();
     int     getRPN();
     static  int ft_calc(int x, int y, char oper);
+
+    RPN&    operator=(const RPN& rhs);
 };
 
 #endif

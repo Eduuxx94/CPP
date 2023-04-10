@@ -6,7 +6,7 @@
 /*   By: ede-alme <ede-alme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 15:17:30 by ede-alme          #+#    #+#             */
-/*   Updated: 2023/04/09 19:16:54 by ede-alme         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:07:14 by ede-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ PmergeMe::PmergeMe(char** args) {
 
 PmergeMe::PmergeMe(const PmergeMe &copy)
 {
-    for (size_t i = 0; i < copy._intVector.size(); i++) {
-        _intVector.push_back(copy._intVector[i]);
-    }
-    for (size_t j = 0; j < copy._intDeque.size(); j++) {
-        _intDeque.push_back(copy._intDeque[j]);
-    }
+    _intVector = std::vector<int>(copy._intVector.begin(), copy._intVector.end());
+    _intDeque = std::deque<int>(copy._intDeque.begin(), copy._intDeque.end());
 }
 
 PmergeMe::~PmergeMe()
@@ -117,12 +113,13 @@ T PmergeMe::mergeShort(T container)
 }
 
 void PmergeMe::startShort() {
-    double time_vector, time_deque;
+    double time_vector, time_deque, time_std;
     struct timeval start_time, end_time;
+    std::deque<int>    temp = std::deque<int>(_intDeque.begin(), _intDeque.end());;
 
     //Before short numbers:
     std::cout << "Before:\t";
-    for (size_t i = 0; _intVector[i]; i++) {
+    for (size_t i = 0; i < _intVector.size(); i++) {
         std::cout << " " << _intVector[i];
     }
     std::cout << std::endl;
@@ -136,7 +133,7 @@ void PmergeMe::startShort() {
 
     //After short numbers:
     std::cout << "After:\t";
-    for (size_t i = 0; _intVector[i]; i++) {
+    for (size_t i = 0; i < _intVector.size(); i++) {
         std::cout << " " << _intVector[i];
     }
     std::cout << std::endl;
@@ -148,25 +145,27 @@ void PmergeMe::startShort() {
     time_deque = (end_time.tv_sec - start_time.tv_sec) * 1000.0; // seconds to milliseconds
     time_deque += (end_time.tv_usec - start_time.tv_usec) / 1000.0; // microseconds to milliseconds
 
+    //starting count std short
+    gettimeofday(&start_time, NULL);
+    std::sort(temp.begin(), temp.end());
+    gettimeofday(&end_time, NULL);
+    time_std = (end_time.tv_sec - start_time.tv_sec) * 1000.0; // seconds to milliseconds
+    time_std += (end_time.tv_usec - start_time.tv_usec) / 1000.0; // microseconds to milliseconds
 
-    //Result time of vector short:
+
+    //Result time of vector merge short:
     std::cout << "Time to process a range of " << _intVector.size() << " elements with std::vector : " << std::setprecision(10) << time_vector << std::endl;
-     //Result time of deque short:
+    //Result time of deque merge short:
     std::cout << "Time to process a range of " << _intDeque.size() << " elements with std::deque : " << std::setprecision(10) << time_deque << std::endl;
-
+    //Result time of std short:
+    std::cout << "Time to process a range of " << temp.size() << " elements with std::deque : " << std::setprecision(10) << time_std << " (std::short)" << std::endl;
 }
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &rhs)
 {
     if (this != &rhs) {
-        _intVector.clear();
-        for (size_t i = 0; i < rhs._intVector.size(); i++) {
-            _intVector.push_back(rhs._intVector[i]);
-        }
-        _intDeque.clear();
-        for (size_t j = 0; j < rhs._intDeque.size(); j++) {
-            _intDeque.push_back(rhs._intDeque[j]);
-        }
+        _intVector = std::vector<int>(rhs._intVector.begin(), rhs._intVector.end());
+        _intDeque = std::deque<int>(rhs._intDeque.begin(), rhs._intDeque.end());
     }
     return *this;
 }
